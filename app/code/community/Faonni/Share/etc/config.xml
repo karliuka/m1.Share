@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Faonni
+ *  
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade module to newer
+ * versions in the future.
+ * 
+ * @package     Faonni_Share
+ * @copyright   Copyright (c) 2015 Karliuka Vitalii(karliuka.vitalii@gmail.com)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+	<modules>
+		<Faonni_Share>
+			<version>1.0.2</version>
+		</Faonni_Share>
+	</modules>
+	<global>
+        <blocks>
+            <faonni_share>
+				<class>Faonni_Share_Block</class>
+			</faonni_share>
+        </blocks>		
+		<helpers>
+			<faonni_share>
+				<class>Faonni_Share_Helper</class>
+			</faonni_share>
+		</helpers>
+        <models>
+			<faonni_share>
+				<class>Faonni_Share_Model</class>
+				<resourceModel>faonni_share_resource</resourceModel>
+			</faonni_share>
+            <faonni_share_resource>
+                <class>Faonni_Share_Model_Resource</class>
+				<entities>		  
+					<summary>
+						<table>faonni_share_summary</table>
+					</summary>
+				</entities>				
+            </faonni_share_resource>				
+		</models>
+		<resources>
+			<faonni_share_setup>
+				<setup>
+					<module>Faonni_Share</module>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</faonni_share_setup>
+			<faonni_share_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</faonni_share_write>
+			<faonni_share_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</faonni_share_read>
+		</resources>		
+	</global>
+    <frontend>
+        <layout>
+            <updates>
+                <faonni_share>
+                    <file>faonni/share.xml</file>
+                </faonni_share>
+            </updates>
+        </layout>
+		<routers>
+			<faonni_share>
+				<use>standard</use>
+				<args>
+					<module>Faonni_Share</module>
+					<frontName>share</frontName>
+				</args>
+			</faonni_share>
+		</routers>
+		<events>
+			<catalog_controller_product_view>
+				<observers>
+					<faonni_share_product_object>
+						<class>faonni_share/observer</class>
+						<method>setShareObject</method>
+					</faonni_share_product_object>
+					<faonni_share_summary_collection>
+						<class>faonni_share/observer</class>
+						<method>setSummaryCollection</method>
+					</faonni_share_summary_collection>						
+				</observers>
+			</catalog_controller_product_view>
+			<faonni_share_summary_update_before>
+				<observers>
+					<faonni_share_summary_update>
+						<class>faonni_share/observer</class>
+						<method>getEntityType</method>
+					</faonni_share_summary_update>					
+				</observers>
+			</faonni_share_summary_update_before>		
+        </events>		
+    </frontend>	
+    <default>
+		<faonni_share>
+		    <common>
+                <active>0</active>
+				<size>110x110</size>
+				<unite>0</unite>
+            </common>
+			<facebook>
+				<id>facebook</id>
+				<title>Share on Facebook</title>
+				<active>1</active>
+				<width>600</width>
+				<height>450</height>				
+				<sort>20</sort>
+            </facebook>	
+			<twitter>
+				<id>twitter</id>
+				<title>Tweet</title>
+				<active>1</active>
+				<width>640</width>
+				<height>480</height>				
+				<sort>30</sort>
+            </twitter>
+			<pinterest>
+				<id>pinterest</id>
+				<title>Pin It</title>
+				<active>1</active>
+				<width>640</width>
+				<height>480</height>				
+				<sort>40</sort>
+            </pinterest>
+			<linkedin>
+				<id>linkedin</id>
+				<title>Share on LinkedIn</title>
+				<active>1</active>
+				<width>640</width>
+				<height>480</height>				
+				<sort>50</sort>
+            </linkedin>				
+		</faonni_share>	
+    </default>		
+</config> 

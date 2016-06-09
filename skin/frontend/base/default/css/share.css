@@ -1,0 +1,95 @@
+/**
+ * Faonni
+ *  
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade module to newer
+ * versions in the future.
+ * 
+ * @package     Faonni_Share
+ * @copyright   Copyright (c) 2015 Karliuka Vitalii(karliuka.vitalii@gmail.com) 
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+*/
+
+ul.share-button{
+	text-align:right;
+	margin-bottom:10px;
+	line-height: 17px;	
+}
+
+ul.share-button li {
+	display:inline-block;
+	vertical-align:top;
+	position:relative;
+}
+
+.share-icon {
+	float:left;
+	width: 19px;
+	height: 19px;
+	cursor:pointer;
+}
+
+.share-icon:hover{
+	opacity: 0.4;
+}
+
+ul.share-button .share-count {
+    background: none repeat scroll 0 0 white;
+    border: 1px solid #d8d8d8;
+    border-radius: 2px;
+    color: #4e5665;
+    display: inline-block;
+    font-size: 11px;
+    height: 17px;
+    line-height: 17px;
+    margin-left: 6px;
+    min-width: 15px;
+    padding: 0 2px;
+    text-align: center;
+    white-space: nowrap;
+} 
+
+.share-count-nub {
+    height: 0;
+    left: 2px;
+    position: relative;
+    top: -15px;
+    width: 5px;
+    z-index: 2;
+}
+
+.share-count-nub s, .share-count-nub i {
+    border-color: transparent #d8d8d8;
+    border-style: solid;
+    border-width: 4px 5px 4px 0;
+    display: block;
+    position: relative;
+    top: 1px;
+}
+
+.share-count-nub i {
+    border-right-color: #fff;
+    left: 2px;
+    top: -7px;
+}
+
+.share-icon-google {
+	background:transparent url(../images/share/google.png) 0 0 no-repeat;
+}
+
+.share-icon-facebook {
+	background:transparent url(../images/share/facebook.png) 0 0 no-repeat;
+}
+
+.share-icon-twitter {
+	background:transparent url(../images/share/twitter.png) 0 0 no-repeat;
+}
